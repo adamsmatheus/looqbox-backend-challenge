@@ -2,7 +2,7 @@ package com.example.pokemonChallenge.service;
 
 import com.example.pokemonChallenge.model.Pokemon;
 import com.example.pokemonChallenge.mother.PokemonMother;
-import org.junit.Assert;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,7 +15,7 @@ import java.util.List;
 
 
 public class PokemonServiceTest {
-    
+
     @Autowired
     private PokemonMother pokemonMother;
 
@@ -38,8 +38,8 @@ public class PokemonServiceTest {
 
         List<Pokemon> result = pokeService.searchWithSubstring(subString);
 
-        Assert.assertNotNull(result);
-        Assert.assertEquals(list.get(0).getNameWithHighlight(),result.get(1).getNameWithHighlight());
+        org.junit.Assert.assertNotNull(result);
+        org.junit.Assert.assertEquals(list.get(0).getNameWithHighlight(),result.get(1).getNameWithHighlight());
 
 
 
@@ -53,8 +53,8 @@ public class PokemonServiceTest {
 
         List<Pokemon> result = pokeService.searchWithSubstring(subString);
 
-        Assert.assertNotNull(result);
-        Assert.assertEquals(result.size(),0);
+        org.junit.Assert.assertNotNull(result);
+        org.junit.Assert.assertEquals(result.size(),0);
 
     }
 
